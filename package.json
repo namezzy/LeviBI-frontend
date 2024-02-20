@@ -36,9 +36,15 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 10"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.8.1",
     "@ant-design/pro-components": "^2.6.48",
@@ -68,8 +74,11 @@
     "@umijs/fabric": "^2.14.1",
     "@umijs/lint": "^4.1.1",
     "@umijs/max": "^4.1.1",
+    "add": "^2.0.6",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-unicorn": "^51.0.1",
     "express": "^4.18.2",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
@@ -83,7 +92,10 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "umi-presets-pro": "^2.0.3",
-    "umi-serve": "^1.9.11"
+    "umi-serve": "^1.9.11",
+    "yarn": "^1.22.21"
   },
-  "engines": { "node": ">=12.0.0" }
+  "engines": {
+    "node": ">=12.0.0"
+  }
 }
