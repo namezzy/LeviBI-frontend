@@ -126,12 +126,12 @@ const AddChart: React.FC = () => {
           <Card title="分析结论">
             {/* {chart?.genResult ?? <div>请现在左侧进行提交</div>} */}
             {!submitting && (chart?.genResult ?? <div>请现在左侧进行提交</div>)}
-            {submitting && <div>AI正在分析数据得出结论</div>}
+            {submitting && <div>AI正在分析数据得出结论中...</div>}
             {<Spin spinning={submitting} />}
           </Card>
           <Card title="可视化图表">
             {!submitting && (option ? <ReactECharts option={option} /> : <div>请现在左侧进行提交</div>)}
-            {submitting && <div>AI正在渲染图表</div>}
+            {submitting && <div>AI正在渲染图表中...</div>}
             {<Spin spinning={submitting} />}
           </Card>
         </Col>
