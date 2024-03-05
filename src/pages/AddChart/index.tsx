@@ -101,8 +101,8 @@ const AddChart: React.FC = () => {
                 />
               </Form.Item>
               <Form.Item name="file" label="原始数据">
-                <Upload name="file">
-                  <Button icon={<UploadOutlined />}>上传CSV文件</Button>
+                <Upload name="file" maxCount={1}>
+                  <Button icon={<UploadOutlined />}>上传表格文件</Button>
                 </Upload>
               </Form.Item>
 
