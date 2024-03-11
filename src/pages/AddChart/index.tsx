@@ -3,7 +3,6 @@ import { UploadOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Form, Row, Select, Space, Spin, Upload, message } from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import ReactECharts from 'echarts-for-react';
-import { divide } from 'lodash';
 import React, { useEffect, useState } from 'react';
 
 /**
@@ -130,7 +129,8 @@ const AddChart: React.FC = () => {
             {<Spin spinning={submitting} />}
           </Card>
           <Card title="可视化图表">
-            {!submitting && (option ? <ReactECharts option={option} /> : <div>请现在左侧进行提交</div>)}
+            {!submitting &&
+              (option ? <ReactECharts option={option} /> : <div>请现在左侧进行提交</div>)}
             {submitting && <div>AI正在渲染图表中...</div>}
             {<Spin spinning={submitting} />}
           </Card>
