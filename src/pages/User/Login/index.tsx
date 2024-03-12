@@ -141,7 +141,7 @@ const Login: React.FC = () => {
           title="Levi 智能BI"
           subTitle={
             <a href="https://blog.withlevi.top" target="_blank">
-              Levi 智能BI 是由利瓦伊科技出品
+              由利瓦伊科技出品
             </a>
           }
           onFinish={async (values) => {
