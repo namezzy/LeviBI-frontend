@@ -3,11 +3,14 @@ import { DefaultFooter } from '@ant-design/pro-components';
 import React from 'react';
 
 const Footer: React.FC = () => {
+  const defaultMessage = '利瓦伊科技有限公司出品';
+  const currentYear = new Date().getFullYear();
   return (
     <DefaultFooter
       style={{
         background: 'none',
       }}
+      copyright={`${currentYear} ${defaultMessage}`}
       links={[
         {
           key: 'Levi智能BI',
