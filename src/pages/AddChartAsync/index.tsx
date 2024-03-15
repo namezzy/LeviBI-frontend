@@ -1,4 +1,4 @@
-import { genChartByAiAsyncUsingPost, genChartByAiUsingPost, listChartByPageUsingPost } from '@/services/levibi/chartController';
+import { genChartByAiAsyncMqUsingPost, genChartByAiAsyncUsingPost, genChartByAiUsingPost, listChartByPageUsingPost } from '@/services/levibi/chartController';
 import { UploadOutlined } from '@ant-design/icons';
 import { Button, Card, Col, Form, Row, Select, Space, Upload, message } from 'antd';
 import { useForm } from 'antd/es/form/Form';
@@ -39,7 +39,7 @@ const AddChartAsync: React.FC = () => {
     };
 
     try {
-      const res = await genChartByAiAsyncUsingPost(params, {}, values.file.file.originFileObj);
+      const res = await genChartByAiAsyncMqUsingPost(params, {}, values.file.file.originFileObj);
       console.log(res);
       if (!res?.data) {
         message.error('分析失败');
