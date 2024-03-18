@@ -122,6 +122,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
  */
 export const request = {
   baseURL: 'https://bi-backend.withlevi.top',
-  withCredentials: true,  
+  credentials: 'include',
   ...errorConfig,
 };
