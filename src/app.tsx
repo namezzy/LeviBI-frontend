@@ -16,7 +16,7 @@ export async function getInitialState(): Promise<{
 }> {
   const fetchUserInfo = async () => {
     try {
-      const res = await getLoginUserUsingGet();``
+      const res = await getLoginUserUsingGet();
       return res.data;
     } catch (error) {
       history.push(loginPath); 
@@ -121,7 +121,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const request = {
-  baseURL: 'https://bi-backend.withlevi.top',
+  // baseURL: 'https://bi-backend.withlevi.top',
+  baseURL: 'http://localhost:8101',
   withCredentials: true,
   ...errorConfig,
 };

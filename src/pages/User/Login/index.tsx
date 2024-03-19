@@ -71,10 +71,10 @@ const LoginMessage: React.FC<{
   );
 };
 const Login: React.FC = () => {
-  const [userLoginState, setUserLoginState] = useState<API.LoginResult>({});
   const [type, setType] = useState<string>('account');
-  const { initialState, setInitialState } = useModel('@@initialState');
+  const { initialState, refresh,setInitialState } = useModel('@@initialState');
   const { styles } = useStyles();
+  
 
   /**
    * 登录成功后获取用户的登录信息
@@ -82,14 +82,16 @@ const Login: React.FC = () => {
   const fetchUserInfo = async () => {
     const userInfo = await getLoginUserUsingGet();
     if (userInfo) {
+      console.log(userInfo)
       flushSync(() => {
-        setInitialState((s) => ({
+        setInitialState((s:any) => ({
           ...s,
           currentUser: userInfo,
         }));
       });
     }
   };
+  
   useEffect(() => {
     listChartByPageUsingPost({}).then((res) => {
       console.error('res', res);
@@ -104,8 +106,10 @@ const Login: React.FC = () => {
         const defaultLoginSuccessMessage = '登录成功！';
         message.success(defaultLoginSuccessMessage);
         await fetchUserInfo();
+       
         const urlParams = new URL(window.location.href).searchParams;
         history.push(urlParams.get('redirect') || '/');
+        refresh();
         return;
       } else {
         message.error(res.message);
@@ -117,7 +121,6 @@ const Login: React.FC = () => {
       message.error(defaultLoginFailureMessage);
     }
   };
-  const { status, type: loginType } = userLoginState;
   return (
     <div className={styles.container}>
       <Helmet>
